@@ -37,9 +37,9 @@ public class HomePage {
         }
     }
 
-    private void validateUserLogged(String user){
+    public void validateUserLogged(String user){
         String txt_user = page.locator(user_logged).textContent();
-        String validate_text = txt_user.split(" ")[3];
+        String validate_text = txt_user.split(" ")[4];
         Assert.assertEquals(validate_text, user);
 
     }

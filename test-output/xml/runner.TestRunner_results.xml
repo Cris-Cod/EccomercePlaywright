@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="EcommercePlaywright"
-           tests="1"
+           tests="2"
            failures="0"
            errors="0"
            skipped="0"
-           time="5,945">
+           time="8,481">
     <properties></properties>
 
 
 
             <testcase
                 name="runScenario"
-                time="5,945"
+                time="4,235"
+                classname="runner.TestRunner">
+            </testcase>
+            <testcase
+                name="runScenario"
+                time="4,246"
                 classname="runner.TestRunner">
             </testcase>
 </testsuite>
