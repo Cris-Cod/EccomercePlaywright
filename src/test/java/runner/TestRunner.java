@@ -5,7 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/java/features",
-        glue = "stepDefinitions",
+        glue = {"stepDefinitions", "hooks"},
+        tags = "@searchProduct",
         plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         monochrome = true
 )

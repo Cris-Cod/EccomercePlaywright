@@ -16,6 +16,7 @@ public class SignUpPage {
     private String input_name = "Name"; //placeholder
     private String input_email = "//input[@data-qa='signup-email']";
     private String btn_signUp = "//button[@data-qa='signup-button']";
+    private String txt_email_exist = "(//p)[1]";
 
     public void validateTitleSingUp(){
         assertThat(page.locator(text_signUp)).isVisible();
@@ -25,5 +26,9 @@ public class SignUpPage {
         page.getByPlaceholder(input_name).fill(nameUser);
         page.locator(input_email).fill(email);
         page.locator(btn_signUp).click();
+    }
+
+    public void validateTextEmailExist(String message){
+        assertThat(page.locator(txt_email_exist)).containsText(message);
     }
 }

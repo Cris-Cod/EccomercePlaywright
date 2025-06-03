@@ -43,7 +43,7 @@ public class AccountInformationPage {
         try {
             if(status.equalsIgnoreCase("Mr")){
                 page.locator(checkBoxMr).check();
-            }else{
+            } else if (status.equalsIgnoreCase("Mrs")) {
                 page.locator(checkBoxMrs).check();
             }
         }catch (Exception e){

@@ -9,15 +9,16 @@ import java.nio.file.Paths;
 
 public class ScreenShotUtils {
 
-    private Page page;
+    protected Page page = null;
 
     public ScreenShotUtils(Page page) {
+        this.page = page;
     }
 
-    public void attachScreenshot(String name){
+    public void attachScreenshot(Page page, String name){
 
-            byte[] img =  page.screenshot(new Page.ScreenshotOptions().setType(ScreenshotType.PNG));
-            Allure.addAttachment(name, new ByteArrayInputStream(img));
-
+            /*byte[] img =  page.screenshot(new Page.ScreenshotOptions().setType(ScreenshotType.PNG));
+            Allure.addAttachment(name, new ByteArrayInputStream(img));*/
+            page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("/screnshots/" + name)));
     }
 }

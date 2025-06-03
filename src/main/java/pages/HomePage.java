@@ -31,7 +31,7 @@ public class HomePage {
         List<String> allItemsNames = allItems.allInnerTexts();
 
         for (int i = 0; i < allItemsNames.size(); i++) {
-            if(allItemsNames.get(i).equalsIgnoreCase(item)){
+            if(allItemsNames.get(i).contains(item)){
                 allItems.nth(i).click();
             }
         }

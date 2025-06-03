@@ -10,3 +10,9 @@ Feature: Register user
     When the user logs into the newly created account
     And selects the option to delete the account
     Then the account is deleted
+
+  Scenario: Register User with existing email
+    Given the user enters the e-commerce page
+    When the user selects the option to create a "new account"
+    And enters "userName" and existing "email"
+    Then Verify message error "Email Address already exist!" is visible
