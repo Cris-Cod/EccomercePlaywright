@@ -24,6 +24,7 @@ public class ProductsPage {
     String list_products = "//div[@class='single-products']";
     String list_overley_product = "//div[@class='overlay-content']";
     String list_overley_btn_addProduct = "//a[@class='btn btn-default add-to-cart']";
+    String modal_addToCart = "//div[@class='modal-content']";
     String btn_continue_modal = "//button[@data-dismiss='modal']";
     String btn_viewCart_modal = "//div[@class='modal-body']/p[2]/a";
 
@@ -51,17 +52,30 @@ public class ProductsPage {
 
     public void select_product(int product){
         Locator list_product = page.locator(list_products);
-        ElementHandle elemnt = (ElementHandle) list_product.nth(product);
-        elemnt.hover();
-        page.locator(list_overley_btn_addProduct).click();
+        list_product.nth(product).hover();
+        Locator list_btn_addProduct = page.locator(list_overley_btn_addProduct);
+        list_btn_addProduct.nth(product).click();
+    }
+
+    public void select_product1(int product){
+        Locator list_product = page.locator(list_products);
+        list_product.nth(product).hover();
+        Locator list_btn_addProduct = page.locator(list_overley_btn_addProduct);
+        list_btn_addProduct.nth(product + 1).click();
     }
 
     public void clickBtnContinueModal(){
-        page.locator(btn_continue_modal);
+        page.waitForSelector(modal_addToCart);
+        if(page.isVisible(modal_addToCart)){
+            page.locator(btn_continue_modal).click();
+        }else{
+            System.out.println("no se encuentra el modal");
+        }
+
     }
 
     public void clickBtnviewCart(){
-        page.locator(btn_viewCart_modal);
+        page.locator(btn_viewCart_modal).click();
     }
 
 }

@@ -98,6 +98,11 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-java-commons</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.27.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -124,6 +129,7 @@
                     <argLine>
                         -Dfile.encoding=${project.build.sourceEncoding}
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -Dallure.results.directory=${project.build.directory}/allure-results
                     </argLine>
                 </configuration>
                 <dependencies>

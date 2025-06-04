@@ -14,6 +14,7 @@ Feature: Validate products
     And  user enters "product name" in search input and click search button
     Then verify "SEARCHED PRODUCTS" is visible
 
+  @addProductsCart
   Scenario: Add Products in Cart
     Given user enter the e-commerce page
     When user selects new option to create a "Products"

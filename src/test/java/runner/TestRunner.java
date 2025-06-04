@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src/test/java/features",
         glue = {"stepDefinitions", "hooks"},
-        tags = "@searchProduct",
+        //tags = "@addProductsCart",
         plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         monochrome = true
 )
